@@ -24,6 +24,11 @@ getApoyo = function(callback) {
     Apoyo.findAll().then(apoyo => callback(apoyo))
 }
 
+getProfesor = function(idProfesor, callback) {
+    Usuarios.findOne({ where: { idProfesor: idProfesor } }).then(profesor => callback(profesor));
+}
+
+
 //Creación de consultas pais - estado
 // Recuperar información (1)
 getEstadosAll = function(callback) {
@@ -60,6 +65,7 @@ postUsuariosDavi = function(request, callback) {
 // Exportación de modulos (2)
 //  Get
 module.exports.getEstadosAll = this.getEstadosAll
+module.exports.getProfesor = getProfesor;
 
 module.exports.init = init;
 // Exportación de modulos

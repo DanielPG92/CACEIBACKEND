@@ -22,7 +22,7 @@ const loginUsuario = async(req, res) => {
         const validPassword = bcrypt.compareSync(Contrasena, dbUser[0].Contrasena);
         if (!validPassword) {
             return res.status(400).json({
-                of: false,
+                ok: false,
                 msg: 'El password no es valido'
             });
         }

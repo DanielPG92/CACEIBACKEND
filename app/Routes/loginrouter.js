@@ -7,8 +7,8 @@ const { validarJWT } = require('../Login/midelware/validar-jwt');
 module.exports = function(app) {
 
     app.post('/post/login', [
-            check('El nombre es obligatorio', 'Wl email es obligatorio'),
-            check('NombreCompleto', 'La contraseña es obligatoria').isLength({ min: 6 }),
+            check('NombreCompleto', 'Wl email es obligatorio'),
+            check('Contrasena', 'La contraseña es obligatoria').isLength({ min: 6 }),
             validarCampos
         ],
         loginUsuario);
