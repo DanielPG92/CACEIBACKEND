@@ -4,4 +4,11 @@ module.exports = function(app, mysql) {
             res.send(result)
         })
     })
+
+
+    app.get('/get/usuarios', (req, res) => {
+        mysql.getUsuariosDaniel(function(result) {
+            res.send(result);
+        })
+    })
 }

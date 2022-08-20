@@ -62,8 +62,11 @@ postUsuariosDavi = function(request, callback) {
 
 }
 
-// Exportación de modulos (2)
-//  Get
+getUsuariosDaniel = function(callback) {
+        Usuarios.findAll({ attributes: ['NombreCompleto', 'Licenciatura', 'Especialidad', 'Maestria', 'Doctorado'] }).then(usuarios => callback(usuarios));
+    }
+    // Exportación de modulos (2)
+    //  Get
 module.exports.getEstadosAll = this.getEstadosAll
 module.exports.getProfesor = getProfesor;
 
@@ -73,3 +76,6 @@ module.exports.getApoyo = getApoyo;
 
 //POST
 module.exports.postUsuariosDavi = postUsuariosDavi;
+//GET 
+
+module.exports.getUsuariosDaniel = getUsuariosDaniel;
